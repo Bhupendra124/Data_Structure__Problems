@@ -36,7 +36,7 @@ public class Calender {
         int[][] totalDays = new int[6][7];
 
         // logic to check leap year or not
-        boolean leapYear = Utility.isLeapYear(year);
+        boolean leapYear = isLeapYear(year);
         if ((leapYear == true) && (month == 2)) {
             monthDay = 29;
         }
@@ -83,6 +83,17 @@ public class Calender {
                     System.out.print("\t");
             }
             System.out.println();
+        }
+    }
+    public static boolean isLeapYear(int year) {
+
+        boolean leapYear = false;
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            leapYear = true;
+            return leapYear;
+        } else {
+            leapYear = false;
+            return leapYear;
         }
     }
 }
